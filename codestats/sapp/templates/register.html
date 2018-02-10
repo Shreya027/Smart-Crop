@@ -1,0 +1,167 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kode is a Premium Bootstrap Admin Template, It's responsive, clean coded and mobile friendly">
+  <meta name="keywords" content="bootstrap, admin, dashboard, flat admin template, responsive," />
+  <title>Register - Croppy</title>
+
+  <!-- ========== Css Files ========== -->
+  <link href="{% static "css/root.css" %}" rel="stylesheet">
+  <style type="text/css">
+body{
+      background: url("background.html") no-repeat fixed center;
+    }
+
+.clip-wrap {
+  text-align: center;
+  width: 760px;
+  margin: 20px auto;
+  margin-bottom: 0px
+}
+
+.clip-polygon:nth-child(1n + 5) {
+  transform: translateY(-50%);
+}
+.clip-polygon:nth-child(1n + 5):hover {
+  transform: translateY(-50%) scale(1.4);
+}
+
+.clip-polygon {
+  position: relative;
+  transition: .6s all, .3s .3s transform;
+  clip-path: polygon(50% 0%, 50% 0%, 100% 50%, 50% 100%, 50% 100%, 0% 50%);
+  opacity: .8;
+}
+
+.clip-polygon:hover {
+  //clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 100% 100%, 0% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%);
+  //clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%);
+  transform: scale(1.4);
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  border-radius: 3px;
+  opacity: 1;
+}
+
+  </style>
+  </head>
+  <body>
+
+
+  <div class="clip-wrap" >
+  <img src="https://static.pexels.com/photos/192/wood-landscape-nature-rocks-medium.jpg" width="180" height="180" class="clip-polygon">
+  <img src="https://static.pexels.com/photos/397/italian-landscape-mountains-nature-medium.jpg" width="180" height="180" class="clip-polygon">
+  <img src="https://static.pexels.com/photos/1562/italian-landscape-mountains-nature-medium.jpg" width="180" height="180" class="clip-polygon">
+  <img src="https://static.pexels.com/photos/1242/nature-field-sun-agriculture-medium.jpg" width="180" height="180" class="clip-polygon">
+  <img src="https://static.pexels.com/photos/541/nature-forest-trees-fog-medium.jpg" width="180" height="180" class="clip-polygon">
+  <img src="https://static.pexels.com/photos/1130/snow-landscape-mountains-nature-medium.jpg" width="180" height="180" class="clip-polygon">
+  <img src="https://static.pexels.com/photos/792/wood-landscape-mountains-nature-medium.jpg" width="180" height="180" class="clip-polygon">
+</div>
+
+
+    <div class="login-form" style="padding-left:500px; padding:top:0px" >  
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="top">
+     
+
+        </div>
+        <div class="form-area">
+      
+          <div class="group">
+            <input style="margin:10px; padding:10px;padding-right:160px" type="text" class="form-control" value="{{ first_name }}" name="fname" id="fname" placeholder="First Name" required="required">
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="group">
+            <input style="margin:10px; padding:10px;padding-right:160px" type="text" class="form-control" name="lname" value="{{ last_name }}" id="lname" placeholder="Last Name" required="required">
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="group">
+            <input  style="margin:10px; padding:10px;padding-right:160px" type="text" id="aadhar" class="form-control" name="aadhar" value="{{ aadhar }}"  placeholder="Aadhar" required="required">
+            <i class="fa fa-envelope-o"></i>
+            <div style=" color:#f00;"> {{ error }} </div>
+          </div>
+          <div class="group">
+            <input style="margin:10px; padding:10px;padding-right:160px" type="text" id="mobile" class="form-control" name="mobile" value="{{ mobile }}"  placeholder="Mobile" required="required">
+            <i class="fa fa-phone"></i>
+            <div style=" color:#f00;"> {{ error }} </div>
+          </div>
+          <div class="group">
+            <input style="margin:10px; padding:10px;padding-right:160px" type="text" id="email" class="form-control" name="email" value="{{ email }}" placeholder="E-mail" required="required">
+            <i class="fa fa-envelope-o"></i>
+            <div style=" color:#f00;"> {{ error1 }} </div>
+          </div>
+          <button  style="margin:10px; padding:10px;padding-right:240px" type="submit" class="btn btn-default btn-block">REGISTER</button>
+        </div>
+        
+      
+      <!--<div class="footer-links row">
+        <div class="col-xs-6"><a href="#"><i class="fa fa-sign-in"></i> Login</a></div>
+        <div class="col-xs-6 text-right"><a href="#"><i class="fa fa-lock"></i> Forgot password</a></div>
+      </div>-->
+    </div>
+    
+    </form>
+
+<script type="text/javascript">
+
+function check() {
+    var bool = true;
+    //var uname = document.getElementById('username');
+    var email = document.getElementById('email');
+    var fname = document.getElementById('fname');
+    var lname = document.getElementById('lname');
+    if(uname.value == '')
+    {
+      uname.style.border= "1px solid #f00";
+      bool = false;
+      //alert("empty");
+    }
+    if(email.value == '')
+    {
+      email.style.border= "1px solid #f00";
+      bool = false;
+      //alert("empty");
+    }
+    if(pass.value == '')
+    {
+      bool = false;
+      pass.style.border= "1px solid #f00";
+      //alert("empty");
+    }
+    if(pass2.value == '')
+    {
+      bool = false;
+      pass2.style.border= "1px solid #f00";
+      //alert("empty");
+    }
+    if(fname.value == '')
+    {
+      bool = false;
+      fname.style.border= "1px solid #f00";
+      //alert("empty");
+    }
+    if(lname.value == '')
+    {
+      bool = false;
+      lname.style.border= "1px solid #f00";
+      //alert("empty");
+    }
+    if(bool)
+    {
+      document.getElementById('trueSubmit').click();
+    }
+    
+  }
+</script>
+
+
+
+</body>
+</html>
