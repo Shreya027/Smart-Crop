@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^reminders/', views.reminders),
     url(r'^send_sms/', views.send_sms),
     url(r'^facedetect/',views.facedetect),
+    url(r'^feedback/',views.feedback),
 ]
 
 
