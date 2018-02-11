@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+      
+         background: url("{% static 'stone4.jpg' %}") no-repeat center center fixed ;
+  background-size:cover;
+
+        
+      }
+      #map {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+          left: 0px;
+        top: 0px;
+
+      }
+      .controls {
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        height: 44px;
+        position: absolute;;
+          left: 240px;
+        top: 220px;
+        outline: none;
+       
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      .controls:focus {
+        border-color: #4d90fe;
+      }
+      h1 
+      { 
+        padding-left: 450px;
+        font-size: 30px;
+        font-style: italic;
+        padding-top: 70px;
+
+        color:#0066cc;
+        opacity: 0.8;
+      }
+    </style>
+
+
+
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  </head>
+  <body onload="initialize()">
+
+
+  
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+    <div id="map"></div>
+
+    <script>
+      // This sample uses the Place Autocomplete widget to allow the user to search
+      // for and select a place. The sample then displays an info window containing
+      // the place ID and other information about the place that the user has
+      // selected.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 22.057437, lng: 58.93817289999993},
+          zoom: 3
+        });
+
+        var input = document.getElementById('pac-input');
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        autocomplete.addListener('place_changed', function() {
+          /*infowindow.close();*/
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            return;
+          }
+          
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+          }
+          
+          addMarker (place.place_id , place.geometry.location ,map,place);
+            
+        
+          // Set the position of the marker using the place ID and location.
+          
+
+          });
+        
+          
+          function addMarker (a ,b, map,place)
+          {
+          var marker = new google.maps.Marker({
+          map: map,
+          attribution: {
+          source: 'Travel'
+          },
+          place:
+          {
+            placeId: a,
+            location: b
+          }
+          });  
+          marker.setVisible(true);
+          var infowindow = new google.maps.InfoWindow();
+         
+          infowindow.setContent('<div><strong>'+ place.name+ '</strong><br>' +
+              place.formatted_address + '<br>' + b+ '<div>');
+
+          marker.addListener('click', function() {
+          infowindow.open(map, marker);
+          });
+           
+          }
+          
+          }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMZM19WQUkhUmc2jKZiIiRHm5m3PAARfs
+          &signed_in=true&libraries=places&callback=initMap"
+        async defer></script>
+       
+  </body>
+</html>
