@@ -1,0 +1,293 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps - pygmaps </title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
+<script type="text/javascript">
+	function initialize() {
+		var centerlatlng = new google.maps.LatLng(24.500000, 80.500000);
+		var myOptions = {
+			zoom: 5,
+			center: centerlatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		var latlng = new google.maps.LatLng(14.750429, 78.570026);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:7.0   SO2:5.0    CO:18.0     NO2:5.0    PM2.5:72.0     PM10:26.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(26.749981, 94.216667);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:6.0   SO2:2.0    CO:13.0     NO2:4.0    PM2.5:72.0     PM10:60.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(25.785414, 87.479973);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:6.0   SO2:4.0    CO:36.0     NO2:22.0    PM2.5:166.0     PM10:87.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(30.719997, 76.780006);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:2.0   SO2:0.0    CO:19.0     NO2:7.0    PM2.5:110.0     PM10:52.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(22.090420, 82.159987);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:11.0   SO2:1.0    CO:26.0     NO2:2.0    PM2.5:151.0     PM10:15.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(20.266578, 73.016618);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:8.0   SO2:0.0    CO:20.0     NO2:1.0    PM2.5:0.0     PM10:0.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(20.428300, 72.839700);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:8.0   SO2:0.0    CO:20.0     NO2:1.0    PM2.5:0.0     PM10:0.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(28.669993, 77.230004);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:5.0   SO2:3.0    CO:59.0     NO2:14.0    PM2.5:237.0     PM10:116.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(15.491997, 73.818001);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:11.0   SO2:3.0    CO:17.0     NO2:4.0    PM2.5:96.0     PM10:49.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(23.300000, 72.630000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:15.0   SO2:2.0    CO:26.0     NO2:4.0    PM2.5:94.0     PM10:20.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(28.450006, 77.019991);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:9.0   SO2:3.0    CO:23.0     NO2:7.0    PM2.5:147.0     PM10:52.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.100025, 77.166597);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:2.0   SO2:1.0    CO:14.0     NO2:11.0    PM2.5:99.0     PM10:75.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(34.299959, 74.466658);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:6.0   SO2:3.0    CO:12.0     NO2:5.0    PM2.5:119.0     PM10:41.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(23.800393, 86.419986);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:23.0   SO2:3.0    CO:41.0     NO2:4.0    PM2.5:173.0     PM10:47.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(12.570381, 76.919997);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:9.0   SO2:1.0    CO:20.0     NO2:4.0    PM2.5:83.0     PM10:39.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(8.900373, 76.569993);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:4.0   SO2:1.0    CO:13.0     NO2:4.0    PM2.5:55.0     PM10:28.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(21.300391, 76.130019);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:14.0   SO2:2.0    CO:22.0     NO2:5.0    PM2.5:128.0     PM10:37.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(19.250232, 73.160175);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:17.0   SO2:6.0    CO:33.0     NO2:11.0    PM2.5:105.0     PM10:44.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(24.799971, 93.950017);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:0.0   SO2:0.0    CO:0.0     NO2:0.0    PM2.5:0.0     PM10:0.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(25.570492, 91.880014);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:9.0   SO2:2.0    CO:11.0     NO2:3.0    PM2.5:73.0     PM10:16.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(23.710399, 92.720015);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:2.0   SO2:0.0    CO:7.0     NO2:3.0    PM2.5:54.0     PM10:25.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(25.666998, 94.116570);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:2.0   SO2:0.0    CO:6.0     NO2:2.0    PM2.5:86.0     PM10:37.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(19.820430, 85.900017);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:4.0   SO2:1.0    CO:17.0     NO2:3.0    PM2.5:82.0     PM10:26.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(31.519974, 75.980003);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:10.0   SO2:2.0    CO:27.0     NO2:5.0    PM2.5:162.0     PM10:46.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(11.934994, 79.830000);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:8.0   SO2:1.0    CO:14.0     NO2:2.0    PM2.5:42.0     PM10:9.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(26.449999, 74.639981);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:8.0   SO2:3.0    CO:34.0     NO2:8.0    PM2.5:173.0     PM10:82.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(27.333330, 88.616647);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:0.0   SO2:0.0    CO:0.0     NO2:0.0    PM2.5:0.0     PM10:0.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(12.920386, 79.150042);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:11.0   SO2:5.0    CO:21.0     NO2:8.0    PM2.5:73.0     PM10:27.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(27.599981, 78.050006);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:12.0   SO2:3.0    CO:29.0     NO2:7.0    PM2.5:184.0     PM10:55.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+		var latlng = new google.maps.LatLng(30.066800, 79.019300);
+		var img = new google.maps.MarkerImage('/usr/local/lib/python3.5/dist-packages/gmplot/markers/FF0000.png');
+		var marker = new google.maps.Marker({
+		title: "CO2:26.0   SO2:2.0    CO:28.0     NO2:4.0    PM2.5:162.0     PM10:76.0",
+		icon: img,
+		position: latlng
+		});
+		marker.setMap(map);
+
+	}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+	<div id="map_canvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

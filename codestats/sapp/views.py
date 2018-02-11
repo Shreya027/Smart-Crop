@@ -48,19 +48,23 @@ def recommend(request):
     return render(request, 'blank.html')
 
 
-
 def chatbot(request):
     return render(request, 'basic_table.html')
 
+def heatmap(request):
+    return render(request, 'test.html')
 
 def compare(request):
     return render(request, 'responsive_table.html')
 
-
+def cropchart(request):
+    return render(request, 'charts.html')
 
 def charts(request):
     return render(request, 'chartjs.html')
 
+def airquality(request):
+    return render(request, 'map1.html')
 
 def to_do(request):
     return render(request, 'todo_list.html')

@@ -27,6 +27,9 @@ urlpatterns = [
     url(r'^logout/', views.logout_app),
     url(r'^recommend/', views.recommend),
     url(r'^charts/', views.charts),
+    url(r'^heatmap/', views.heatmap),
+    url(r'^airquality/', views.airquality),
+    url(r'^cropchart/', views.cropchart),
     url(r'^index/', views.index),
     url(r'^chatbot/', views.chatbot),
     url(r'^compare/', views.compare),
@@ -35,7 +38,6 @@ urlpatterns = [
     url(r'^reminders/', views.reminders),
     url(r'^send_sms/', views.send_sms),
     url(r'^facedetect/',views.facedetect),
-    url(r'^feedback/',views.feedback),
 ]
 
 
