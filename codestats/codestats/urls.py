@@ -23,21 +23,18 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^register/', views.register),
     url(r'^login/', views.login_app),
-    url(r'^$',views.index),
-    url(r'^logout/',views.logout_app),
-    url(r'^recommend/',views.recommend),
-    url(r'^charts/',views.charts),
-    url(r'^index/',views.index),
-    url(r'^chatbot/',views.chatbot),
-    url(r'^compare/',views.compare),
-    url(r'^to_do/',views.to_do),
-    url(r'^gallery/',views.gallery),
-    url(r'^reminders/',views.reminders),
-
-
+    url(r'^$', views.index),
+    url(r'^logout/', views.logout_app),
+    url(r'^recommend/', views.recommend),
+    url(r'^charts/', views.charts),
+    url(r'^index/', views.index),
+    url(r'^chatbot/', views.chatbot),
+    url(r'^compare/', views.compare),
+    url(r'^to_do/', views.to_do),
+    url(r'^gallery/', views.gallery),
+    url(r'^reminders/', views.reminders),
+    url(r'^send_sms/', views.send_sms)
 ]
-
-
 
 
 if settings.DEBUG:

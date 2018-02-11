@@ -14,11 +14,11 @@
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
     <!--external css-->
     <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
-        
+
     <!-- Custom styles for this template -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/style-responsive.css' %}" rel="stylesheet">
-    
+
 
     <!-- HTML5 shim and Respond.js' %} IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,7 +28,11 @@
   </head>
 
   <body>
-
+      <div id="google_translate_element"></div><script type="text/javascript">
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'bn,en,gu,hi,kn,ml,mr,pa,sd,ta,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -42,7 +46,7 @@
             <a href="index.html" class="logo"><b>STATS :: SIMPLIFY</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
-               
+
             </div>
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -51,7 +55,7 @@
             </div>
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -61,10 +65,10 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
+
                   <p class="centered"><a href="profile.html"><img src="{% static 'img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                   <h5 class="centered">USER</h5>
-                    
+
                   <li class="mt">
                       <a  href="/index/">
                           <i class="fa fa-dashboard"></i>
@@ -98,8 +102,8 @@
                       </a>
                   </li>
 
-                 
-                  
+
+
                    <li >
                       <a class="active" href="/charts/">
                           <i class="fa fa-dashboard"></i>
@@ -122,18 +126,18 @@
                       </a>
                   </li>
 
-          
 
-               
-                  
-             
+
+
+
+
 
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -199,7 +203,7 @@
                   </div>
               </div>
               <!-- page end-->
-          </section>          
+          </section>
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -229,7 +233,7 @@
     <!--script for this page-->
     <script src="{% static 'js/chart-master/Chart.js' %}"></script>
     <script src="{% static 'js/chartjs-conf.js' %}"></script>
-    
+
   <script>
       //custom select box
 

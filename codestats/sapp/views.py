@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
-
+import http.client
 
 from random import randint
 from django.contrib.auth import login, logout
-from django.shortcuts import render, get_object_or_404, redirect, render_to_response
+from django.shortcuts import get_object_or_404, redirect, render_to_response
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.http import HttpResponseRedirect, HttpResponse
@@ -16,34 +16,60 @@ from .models import *
 import requests
 from django.contrib import auth
 
-# Create your views here.
-@login_required
+# Create your views here
+
+
 def recommend(request):
-	return render(request, 'blank.html')
+    return render(request, 'blank.html')
+
+
 @login_required
 def chatbot(request):
-	return render(request, 'basic_table.html')
+    return render(request, 'basic_table.html')
+
 
 @login_required
 def compare(request):
-	return render(request, 'responsive_table.html')	
+    return render(request, 'responsive_table.html')
+
 
 @login_required
 def charts(request):
-	return render(request, 'chartjs.html')
+    return render(request, 'chartjs.html')
+
 
 @login_required
 def to_do(request):
-	return render(request, 'todo_list.html')
+    return render(request, 'todo_list.html')
+
 
 @login_required
 def gallery(request):
-	return render(request, 'gallery.html')
+    return render(request, 'gallery.html')
+
 
 @login_required
 def reminders(request):
-	return render(request, 'form_component.html')
+    return render(request, 'form_component.html')
 
+
+def send_sms(request):
+    message = request.POST.get('message')
+    conn = http.client.HTTPConnection("api.msg91.com")
+    payload = "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": message, \"to\": [ \"9819515144\"] }] }"
+    headers = {
+        'authkey': "197517AZ3pT96i9Ef05a7e37ef",
+        'content-type': "application/json"
+    }
+
+    conn.request("POST", "/api/v2/sendsms", payload, headers)
+
+    res = conn.getresponse()
+    data = res.read()
+
+    print(data.decode("utf-8"))
+
+    return render(request, 'blank.html')
 
 
 def register(request):
@@ -55,7 +81,7 @@ def register(request):
         mobile = request.POST.get('mobile')
         aadhar = request.POST.get('aadhar')
         password = randint(1000, 9999)
-        #print(user_type)
+        # print(user_type)
         #message = "Your OTP for login is: "
         #requests.get('https://control.msg91.com/api/sendhttp.php?authkey=132727AshR9z6QU9Dg58416307&mobiles='+mob+'&message='+a+'&sender=DLFIND&route=4', None)
         if MyUser.objects.filter(email=email).exists():
@@ -79,15 +105,14 @@ def register(request):
             user.save()
             return redirect('/login/')
     else:
-            return render(request, 'register.html')
-
+        return render(request, 'register.html')
 
 
 @csrf_exempt
 def login_app(request):
     if request.method == 'POST':
         mobile = request.POST.get('mobile')
-        otp = request.POST.get('otp',None)
+        otp = request.POST.get('otp', None)
         #print(mobile + ' ' + otp)
         if 'mobile' in request.POST and otp is not None:
             try:
@@ -98,7 +123,7 @@ def login_app(request):
             user = None
             user = auth.authenticate(
                 username=email, password=str(otp))
-            #print(user)
+            # print(user)
             if user:
                 login(request, user)
                 return redirect('../')
@@ -115,16 +140,16 @@ def login_app(request):
             user.set_password(otp)
             user.save()
             message = "Your OTP for login is: " + otp
-            requests.get('https://control.msg91.com/api/sendhttp.php?authkey=132727AshR9z6QU9Dg58416307&mobiles=' +
+            requests.get('https://control.msg91.com/api/sendhttp.php?authkey=197517AZ3pT96i9Ef05a7e37ef&mobiles=' +
                          mobile + '&message=' + message + '&sender=CROPPY&route=4', None)
             return HttpResponse()
-    else:            
+    else:
         return render(request, 'login.html')
 
 
 def index(request):
     if request.user.is_authenticated():
-        return render(request,'index.html')
+        return render(request, 'index.html')
     else:
         return redirect('/login/')
 
@@ -135,6 +160,7 @@ def logout_app(request):
         return redirect('/login/')
     else:
         return HttpResponseRedirect('/login/')
+
 
 def feedback(request):
     if request.user.is_authenticated():
@@ -148,8 +174,4 @@ def feedback(request):
             feedback.support_text = text_feedback
             feedback.is_read = False
             feedback.save()
-    return render(request,'feedback.html')
-
-
-
-
+    return render(request, 'feedback.html')

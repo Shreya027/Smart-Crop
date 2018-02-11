@@ -17,7 +17,7 @@
     <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap-datepicker/css/datepicker.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap-daterangepicker/daterangepicker.css' %}" />
-        
+
     <!-- Custom styles for this template -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/style-responsive.css' %}" rel="stylesheet">
@@ -30,7 +30,11 @@
   </head>
 
   <body>
-
+      <div id="google_translate_element"></div><script type="text/javascript">
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'bn,en,gu,hi,kn,ml,mr,pa,sd,ta,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -44,7 +48,7 @@
             <a href="index.html" class="logo"><b>STATS :: SIMPLIFY</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
-           
+
             </div>
       <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -53,7 +57,7 @@
             </div>
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -63,10 +67,10 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
+
                   <p class="centered"><a href="profile.html"><img src="{% static 'img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                   <h5 class="centered">USER</h5>
-                    
+
                   <li class="mt">
                       <a  href="/index/">
                           <i class="fa fa-dashboard"></i>
@@ -100,8 +104,8 @@
                       </a>
                   </li>
 
-                 
-                  
+
+
                    <li >
                       <a  href="/charts/">
                           <i class="fa fa-dashboard"></i>
@@ -124,18 +128,18 @@
                       </a>
                   </li>
 
-          
 
-               
-                  
-             
+
+
+
+
 
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -143,7 +147,7 @@
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Form Components</h3>
-          	
+
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
@@ -201,9 +205,9 @@
                           </div>
                       </form>
                   </div>
-          		</div><!-- col-lg-12-->      	
+          		</div><!-- col-lg-12-->
           	</div><!-- /row -->
-          	
+
           	<!-- INLINE FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
@@ -223,7 +227,7 @@
           			</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->
-          	
+
           	<!-- INPUT MESSAGES -->
           	<div class="row mt">
           		<div class="col-lg-12">
@@ -252,7 +256,7 @@
           			</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->
-          	
+
           	<!-- INPUT MESSAGES -->
           	<div class="row mt">
           		<div class="col-lg-12">
@@ -264,7 +268,7 @@
 						    Option one is this and that&mdash;be sure to include why it's great
 						  </label>
 						</div>
-						
+
 						<div class="radio">
 						  <label>
 						    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -277,7 +281,7 @@
 						    Option two can be something else and selecting it will deselect option one
 						  </label>
 						</div>
-						
+
 						<hr>
 						<label class="checkbox-inline">
 						  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
@@ -288,7 +292,7 @@
 						<label class="checkbox-inline">
 						  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
 						</label>
-						
+
 						<hr>
 						<select class="form-control">
 						  <option>1</option>
@@ -304,10 +308,10 @@
 						  <option>3</option>
 						  <option>4</option>
 						  <option>5</option>
-						</select>        		
+						</select>
           			</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
-          		
+
           	<!-- CUSTOM TOGGLES -->
           		<div class="col-lg-12">
           			<div class="form-panel">
@@ -347,8 +351,8 @@
           			</div>
           		</div>
           	</div><!-- /row -->
-          	
-          	
+
+
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
@@ -381,22 +385,22 @@
 
 	<!--custom switch-->
 	<script src="{% static 'js/bootstrap-switch.js' %}"></script>
-	
+
 	<!--custom tagsinput-->
 	<script src="{% static 'js/jquery.tagsinput.js' %}"></script>
-	
+
 	<!--custom checkbox & radio-->
-	
+
 	<script type="text/javascript" src="{% static 'js/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap-daterangepicker/date.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
-	
+
 	<script type="text/javascript" src="{% static 'js/bootstrap-inputmask/bootstrap-inputmask.min.js' %}"></script>
-	
-	
-	<script src="{% static 'js/form-component.js' %}"></script>    
-    
-    
+
+
+	<script src="{% static 'js/form-component.js' %}"></script>
+
+
   <script>
       //custom select box
 
