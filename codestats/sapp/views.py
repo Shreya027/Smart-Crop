@@ -48,21 +48,20 @@ def recommend(request):
     return render(request, 'blank.html')
 
 
-@login_required
+
 def chatbot(request):
     return render(request, 'basic_table.html')
 
-@login_required
+
 def compare(request):
     return render(request, 'responsive_table.html')
 
 
-@login_required
+
 def charts(request):
     return render(request, 'chartjs.html')
 
 
-@login_required
 def to_do(request):
     return render(request, 'todo_list.html')
 
@@ -72,7 +71,6 @@ def gallery(request):
     return render(request, 'gallery.html')
 
 
-@login_required
 def reminders(request):
     return render(request, 'form_component.html')
 
@@ -83,9 +81,11 @@ def get_image():
 
 @csrf_exempt
 def facedetect(request):
+    errors=[]
 
 
     if request.method == 'POST':
+
         camera = cv2.VideoCapture(camera_port)       
         for i in range(ramp_frames):
             retval,temp = camera.read()
@@ -96,9 +96,22 @@ def facedetect(request):
         cv2.imwrite(file, camera_capture)
         del(camera)
 
-        detect('photographtest.png','photographtest.png')
+        result=detect('photographtest.png','img1.png')
+        if (result==1):
+            print("Redirect")
+            return redirect('/index/')
+
+
+
+        else:
+            print("Error")
+            errors.append(1)
+            print(errors)
+            return render(request,'face.html',
+              {'errors': errors})
+
     
-    return render(request,'face.html')
+    return render(request,'face.html',{'errors': errors})
 
 
 
@@ -127,13 +140,13 @@ def detect(img_sent, img_store):
         #data1= Image.open(img_sent)
         #print(data1)
         #data2= Image.open(img_store)
-        data1 = open(str(img_sent), 'rb').read()
-        data2 = open(str(img_store), 'rb').read()
+        data1 = open(img_sent, 'rb').read()
+        data2 = open(img_store, 'rb').read()
         print("Hello1")
 
 
-        response1 = requests.request('POST', uri_base + '/face/v1.0/detect',  data=img_sent, headers=headers, params=params)
-        response2 = requests.request('POST', uri_base + '/face/v1.0/detect', data=img_store, headers=headers, params=params)
+        response1 = requests.request('POST', uri_base + '/face/v1.0/detect',  data=data1, headers=headers, params=params)
+        response2 = requests.request('POST', uri_base + '/face/v1.0/detect', data=data2, headers=headers, params=params)
         print(response1)
 
         #print ('Response:')
@@ -146,8 +159,9 @@ def detect(img_sent, img_store):
         print(faceId1,faceId2)
 
 
-        verify2(faceId1,faceId2)
+        result= verify2(faceId1,faceId2)
         #print (json.dumps(parsed, sort_keys=True, indent=2))
+        return result
 
     except Exception as e:
         print('Error:')
@@ -178,12 +192,18 @@ def verify2(faceId1,faceId2):
         print ('Response:')
         parsed = json.loads(response.text)
         print(parsed)
-        print (json.dumps(parsed, sort_keys=True, indent=2))
+        print(str(parsed['isIdentical']))
+        if (str(parsed['isIdentical']) is 'True'):
+            print("Verified")
+            return 1
+        else:
+            return 0;
+
+
+        #print (json.dumps(parsed, sort_keys=True, indent=2))
     except Exception as e:
         print('Error:')
-        print(str(e.message))
-        if(str(e.message)=='0'):
-            print('Verified')
+    
 
 
 
@@ -231,13 +251,13 @@ def register(request):
                     'error': 'Mobile already registered by another user',
                     'first_name': first_name,
                     'last_name': last_name,
-                    'username': username,
+                    'username': email,
                     'email': email
                 }
             )
         else:
             user = MyUser.objects.create(
-                first_name=first_name, last_name=last_name, email=email, username=email, mobile_no=mobile, user_type=user_type)
+                first_name=first_name, last_name=last_name, email=email, username=email, mobile_no=mobile, user_type=None)
             user.set_password(password)
             user.save()
             return redirect('/login/')
@@ -283,13 +303,9 @@ def login_app(request):
     else:
         return render(request, 'login.html')
 
-
-
 def index(request):
-    if request.user.is_authenticated():
-        return render(request, 'index.html')
-    else:
-        return redirect('/login/')
+    return render(request,'index.html')
+
 #def index(request):
     #if request.user.is_authenticated():
         #return render(request,'index.html')
