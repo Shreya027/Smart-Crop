@@ -231,7 +231,7 @@ def register(request):
                     'error': 'Mobile already registered by another user',
                     'first_name': first_name,
                     'last_name': last_name,
-                    'username': username,
+                    'username': email,
                     'email': email
                 }
             )
