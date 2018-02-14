@@ -2,7 +2,7 @@ import http.client
 
 conn = http.client.HTTPConnection("api.msg91.com")
 
-payload = "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Message1\", \"to\": [ \"9769953291\"] }] }"
+payload = "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Heavy Rainfall (cloudburst) alert in Chindwara region. Kindly stay indoors until further notice\", \"to\": [ \"9769953291\",\"9819515144\",\"7738554209\"] }] }"
 
 
 headers = {
