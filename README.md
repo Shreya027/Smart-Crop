@@ -13,5 +13,5 @@ namely OTP verification and face verification have been provided for the conveni
 - **TextBlob**
 
 ## Screenshots
-![Home Page](https://imgur.com/GiI6WOD)
+![Home Page](https://i.imgur.com/GiI6WOD.png)
 
