@@ -12,6 +12,5 @@ namely OTP verification and face verification have been provided for the conveni
 - **Google Maps API**
 - **TextBlob**
 
-## Screenshots
 ![Home Page](https://i.imgur.com/GiI6WOD.png)
 
